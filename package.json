@@ -4,12 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sass": "^1.71.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "g": "^2.0.1"
   }
 }
