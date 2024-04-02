@@ -1098,21 +1098,3 @@ import './style.scss';
 
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
-// задание 3
-
-interface Products  {
-  name:string,
-  count:number,
-  value:boolean
-}
-
-const buyledList:Products[] = [
-  { name:'Картошка', count: 1, value:false},
-  { name:'Морковка', count: 5, value:true},
-  { name:'Хлеб', count: 2, value:false},
-  { name:'Молоко', count: 10, value:true},
-  { name:'Слива', count: 20, value:false},
-  { name:'Сыр', count: 4, value:true},
-]
-
-
