@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import './style.scss';
 
 
@@ -1194,16 +1193,3 @@ addProductBtn.addEventListener('click', function() {
 
 // 3 Покупка продукта.Функция принимает название продукта
 // и отмечает его как купленный.
-=======
-import './style.sass'
- 
-let num1 = 7;
-let num2 = 5;
-
-function findSmallerNumber(num1:number, num2:number) {
-    return Math.min(num1, num2);
-}
-console.log(findSmallerNumber(num1, num2));
-
-
->>>>>>> 7cefaa1d4701f4d83e6ff57108d9a0708840b39e
