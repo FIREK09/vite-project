@@ -1098,3 +1098,5 @@ import './style.scss';
 
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
+// Задание 3 Создать массив фруктов и отсортировать его по алфавиту
+console.log('gdsghdfshsh')
