@@ -229,7 +229,7 @@ import './style.scss';
 //   default:
 // }
 
-// тернарный оператор(плюсом сделал через ifelse) <>
+// тернарный оператор
 
 // let num1: number = parseInt(prompt('Введите первое число','55')as string )as number
 // let num2: number = parseInt(prompt('Введите второе число','65')as string )as number
@@ -242,7 +242,7 @@ import './style.scss';
 //   console.log(num1)
 // }
 
-// тернарный оператор остаток от деления или же число кратное 5
+// тернарный оператор остаток от деления
 
 // let userNumber: number = parseInt(prompt('Введите число:')as string)as number
 
@@ -306,7 +306,7 @@ import './style.scss';
 //   break
 // }
 
-// while 4 вот тут пришлось жопой попотеть
+// while 4
 
 // function findSomeThing(a:number, b:number): number[] {
 //   const massive: number[] = [];
@@ -420,7 +420,6 @@ import './style.scss';
 //   if()
 // }
 
-// цикл for 1
 
 // Вывести все числа от 1 до 100, которые кратные указанному
 // пользователем числу.
@@ -445,7 +444,7 @@ import './style.scss';
 
 // console.log(`Числа кратные числу ${userNumber} это ${numberMassive}`)
 
-// цикл for 2
+//for 2
 
 // Вывести каждый 4-й элемент из указанного пользователем
 // диапазона. Пользователь указывает минимальное и максимальное
@@ -481,10 +480,10 @@ import './style.scss';
 //  /          \
 // /!!доделано!!\
 
-// цикл for 3
+//for 3
 
 // Запросить число и проверить, простое ли оно. Простое
-// число делится без остатка только на себя и на единицу.
+// число делится без остатка только на себя и на единицу
 
 // const userInputNumber = parseInt(
 //   prompt('Введите число ', '') as string
@@ -517,13 +516,6 @@ import './style.scss';
 
 // if (userInputNumber % 1 === 0) saveThisSheet(i);
 
-//       /\
-//      /  \
-//     /    \
-//    /      \
-//   /        \
-//  /          \
-// /!!доделано!!\
 
 // const saveUserAgeOld = parseInt(
 //   prompt('Введите число ', '') as string
@@ -566,9 +558,6 @@ import './style.scss';
 //   console.log(a)
 // }
 
-// кстати не совсем понял зачем делать функцию
-
-// но раз есть условие то почему бы и нет
 // const i = parseInt(prompt('Введите число ')as string)as number
 // const a = parseInt(prompt('Введите степень ')as string)as number
 
@@ -604,7 +593,6 @@ import './style.scss';
 //   default:
 // }
 
-// если нужно с 2 до 9 вывод таблицы то надо перед условием ifelse переопределить i = 2 а в условии записать как i < 10 то есть без равно
 
 // const userNum = prompt("Введите число", "") as unknown as number;
 
@@ -643,20 +631,12 @@ import './style.scss';
 
 // // getTrueOrFalseNumbers(minUserNumbers, maxUserNumbers);
 
-// // пока не додумался как решить эту задачку, думаю пора отдохнуть чуть позже доделаю
 
 // Написать функцию, которая выводит все четные или не-
 // четные числа, в указанном пользователем диапазоне. Какие
 // числа выводить, определяется третьим параметром типа
 // boolean (true – четные, false – нечетные).
 
-//       /\
-//      /  \
-//     /    \
-//    /      \
-//   /        \
-//  /          \
-// /!!доделано!!\
 
 // let i = 0;
 
@@ -1135,61 +1115,4 @@ const buyledList:Products[] = [
   { name:'Сыр', count: 4, value:true},
 ]
 
-// 1
-// Вывод всего списка на экран таким образом, чтобы сначала
-// шли некупленные продукты, а потом – купленные.
 
-const addElToBuyList = document.getElementById('userBuyedList') as HTMLOListElement
-
-function renderBuyedList(arr:Products[]) {
-  let html = ''
-
-  for(let el of arr) {
-    if(!el.value) {
-      html += `<li style="color:red"> ${el.name} ${el.count} <button data-name="${el.name}"> Отметить купленным </button> </li>`
-    }
-  }
-  for(let el of arr) {
-    if(el.value) {
-      html += `<li style="color:green"> ${el.name} ${el.count} </li>`
-    }
-  }
-  addElToBuyList.innerHTML = html
-}
-
-renderBuyedList(buyledList)
-
-// 2 Добавление покупки в список.Учтите, что при добавлении
-// покупки с уже существующим в списке продуктом, необ -
-// ходимо увеличивать количество в существующей покупке,
-// а не добавлять новую.
-
-const productNameInput = document.getElementById('nameProduct') as HTMLInputElement
-const productValueInput = document.getElementById('valueProduct') as HTMLInputElement
-const addProductBtn = document.getElementById('addInList') as HTMLButtonElement
-
-function addProduct(arr:Products[], name:string, count:number) {
-  let inList = false 
-   for(let el of arr) {
-    if(el.name == name && !el.value) {
-      el.count += count 
-      inList = true
-    }
-   }
-   if(!inList) {
-    arr.push({name,count,value:false})
-   }
-   renderBuyedList(arr)
-}
-
-addProduct(buyledList, 'Молоко', 2)
-
-addProductBtn.addEventListener('click', function() {
-  const count = parseFloat(productValueInput.value.replace(',', '.'))
-  addProduct(buyledList, productNameInput.value, count)
-  productNameInput.value = ''
-  productValueInput.value = ''
-})
-
-// 3 Покупка продукта.Функция принимает название продукта
-// и отмечает его как купленный.
