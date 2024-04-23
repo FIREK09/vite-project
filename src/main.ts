@@ -1257,7 +1257,7 @@ btnCalculate.addEventListener('click', function() {
 // Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
 // 8, 2020) должна вывести “Today is Monday 10.8.2020”.
 
-// function print(template: string, ...values: any[]): void {
+// function,print(template: string, ...values: any[]): void {
 //   let result: string = template;
 
 //   for (let i = 0; i < values.length; i++) {
