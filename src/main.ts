@@ -1143,7 +1143,7 @@ import './style.scss';
 // console.log(transformCssStyle(cssStyle3)); // textAlign
 
 // Написать функцию, которая принимает словосочетание
-// и превращает его в аббревиатуру.
+// и превращает его в абревиатуру.
 // Например: cascading style sheets в CSS, объектно-
 // ориентированное программирование в ООП.
 
@@ -1165,8 +1165,8 @@ import './style.scss';
 // console.log(createAbbreviation(phrase2)); // ООП
 
 // * pz 7
-// Написать функцию, которая считает количество слов в
-// предложении.
+// Написать функцию которая считает количество слов в
+// предложении
 const inputSum = document.getElementById('firtheen')as HTMLInputElement
 const outputSum = document.getElementById('fifteen')as HTMLOutputElement
 const btnSum = document.getElementById('btn_7')as HTMLButtonElement
@@ -1187,7 +1187,7 @@ btnSum.addEventListener('click', function(){
 
 // * pz 8
 // Написать функцию, которая возвращает самое длинное
-// слово из предложения.
+// слово из предложения
 const inputLonger = document.getElementById('sixteen')as HTMLInputElement
 const outputLonger = document.getElementById('seventeen')as HTMLOutputElement
 const btnLonger = document.getElementById('btn_8')as HTMLButtonElement
@@ -1215,8 +1215,6 @@ btnLonger.addEventListener('click', function(){
 
 // * pz3 функция считает количество гласных в полученной строке
 
-// ? надо исправить ошибки но код работает прекрасно
-// * пометка все не критические(а других и не было) ошибки исправленны 
 
 const inputCalculate = document.getElementById('six')as HTMLInputElement;
 const outputCalculate = document.getElementById('seven')as HTMLOutputElement;
