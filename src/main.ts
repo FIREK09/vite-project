@@ -1098,5 +1098,194 @@ import './style.scss';
 
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
-// Задание 3 Создать массив фруктов и отсортировать его по алфавиту
-console.log('gdsghdfshsh')
+
+// Написать функцию, которая заменяет в полученной строке
+// большие буквы на маленькие, маленькие – на большие, а
+// цифры – на знак нижнего подчеркивания.
+
+// function transformString(str: string): string {
+//   let transformedStr = '';
+
+//   for (const char of str) {
+//       if (/[A-ZА-Я]/.test(char)) {
+//           transformedStr += char.toLowerCase();
+//       } else if (/[a-zа-я]/.test(char)) {
+//           transformedStr += char.toUpperCase();
+//       } else if (/[0-9]/.test(char)) {
+//           transformedStr += '_';
+//       } else {
+//           transformedStr += char;
+//       }
+//   }
+
+//   return transformedStr;
+// }
+
+// const inputString: string = 'Пример строки 123 с Большими и Маленькими Буквами!';
+// const transformedString: string = transformString(inputString);
+// console.log(transformedString);
+
+// Написать функцию, которая преобразует названия css-
+// стилей с дефисом в название в СamelСase стиле: font-size
+// в fontSize, background-color в backgroundColor, text-
+// align в textAlign.
+
+// function transformCssStyle(cssStyle: string): string {
+//   return cssStyle.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+// }
+
+// const cssStyle1: string = 'font-size';
+// const cssStyle2: string = 'background-color';
+// const cssStyle3: string = 'text-align';
+
+// console.log(transformCssStyle(cssStyle1)); // fontSize
+// console.log(transformCssStyle(cssStyle2)); // backgroundColor
+// console.log(transformCssStyle(cssStyle3)); // textAlign
+
+// Написать функцию, которая принимает словосочетание
+// и превращает его в аббревиатуру.
+// Например: cascading style sheets в CSS, объектно-
+// ориентированное программирование в ООП.
+
+// function createAbbreviation(phrase: string): string {
+//   const words: string[] = phrase.split(' ');
+//   let abbreviation: string = '';
+
+//   for (const word of words) {
+//       abbreviation += word[0].toUpperCase();
+//   }
+
+//   return abbreviation;
+// }
+
+// const phrase1: string = 'cascading style sheets';
+// const phrase2: string = 'объектно-ориентированное программирование';
+
+// console.log(createAbbreviation(phrase1)); // CSS
+// console.log(createAbbreviation(phrase2)); // ООП
+
+// * pz 7
+// Написать функцию, которая считает количество слов в
+// предложении.
+const inputSum = document.getElementById('firtheen')as HTMLInputElement
+const outputSum = document.getElementById('fifteen')as HTMLOutputElement
+const btnSum = document.getElementById('btn_7')as HTMLButtonElement
+
+function getValue(str:string) {
+  const arr = str.split(' ');
+  return arr.length;
+}
+
+btnSum.addEventListener('click', function(){
+  const inputValue = inputSum.value 
+  const getSum = getValue(inputValue)
+  outputSum.value = getSum as unknown as string
+})
+
+// const result = getValue('crambole avokado')
+// console.log(result)
+
+// * pz 8
+// Написать функцию, которая возвращает самое длинное
+// слово из предложения.
+const inputLonger = document.getElementById('sixteen')as HTMLInputElement
+const outputLonger = document.getElementById('seventeen')as HTMLOutputElement
+const btnLonger = document.getElementById('btn_8')as HTMLButtonElement
+
+// type arrStr = string|string[]
+
+function getLonger(str:string) {
+ const words:string[] = str.split(' ')
+ let longestWord = ''
+  words.forEach((word) => {
+    if(word.length>longestWord.length) {
+      longestWord = word
+    }
+  });
+  console.log(longestWord)
+  return longestWord
+}
+
+
+btnLonger.addEventListener('click', function(){
+  const inputValue = inputLonger.value 
+  const getFunctionLonger = getLonger(inputValue)
+  outputLonger.value = getFunctionLonger
+})
+
+// * pz3 функция считает количество гласных в полученной строке
+
+// ? надо исправить ошибки но код работает прекрасно
+// * пометка все не критические(а других и не было) ошибки исправленны 
+
+const inputCalculate = document.getElementById('six')as HTMLInputElement;
+const outputCalculate = document.getElementById('seven')as HTMLOutputElement;
+const btnCalculate = document.getElementById('btn_3')as HTMLButtonElement;
+const rusLower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+const rusUpper = rusLower.toUpperCase();
+const enLower = 'abcdefghijklmnopqrstuvwxyz';
+const enUpper = enLower.toUpperCase();
+const rus = rusLower + rusUpper;
+const en = enLower + enUpper;
+
+function countVowels(str:string) {
+  const vowelsEn = ['a', 'e', 'i', 'o', 'u', 'y'];
+  const vowelsRu = ['а', 'о', 'у', 'ы', 'э', 'е', 'ё', 'и', 'ю', 'я'];
+  let count = 0;
+  
+  for (const char of str.toLowerCase()) {
+    if (en.includes(char) && vowelsEn.includes(char)) {
+      count++;
+    } else if (rus.includes(char) && vowelsRu.includes(char)) {
+      count++;
+    }
+  }
+  
+  return count;
+}
+
+btnCalculate.addEventListener('click', function() {
+  const inputValue = inputCalculate.value
+  const vowelCount = countVowels(inputValue);
+  outputCalculate.value = vowelCount as unknown as string;
+});
+
+// Написать функцию вывода текста по заданному шаблону.
+// Функция принимает первым параметром шаблон, в тексте
+// которого может использоваться %, после символа % ука-
+// зывается индекс входного параметра. При выводе вместо
+// %индекс необходимо вывести значение соответствующего
+// входного параметра.
+// Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
+// 8, 2020) должна вывести “Today is Monday 10.8.2020”.
+
+// function print(template: string, ...values: any[]): void {
+//   let result: string = template;
+
+//   for (let i = 0; i < values.length; i++) {
+//       const placeholder = new RegExp(`%${i + 1}`, 'g');
+//       result = result.replace(placeholder, values[i]);
+//   }
+
+//   console.log(result);
+// }
+
+// print('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020);
+
+
+// Написать функцию, которая преобразует названия css-
+// стилей с дефисом в название в СamelСase стиле: font-size
+// в fontSize, background-color в backgroundColor, text-
+// align в textAlign.
+
+// function transformCssStyle(cssStyle: string): string {
+//   return cssStyle.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+// }
+
+// const cssStyle1: string = 'font-size';
+// const cssStyle2: string = 'background-color';
+// const cssStyle3: string = 'text-align';
+
+// console.log(transformCssStyle(cssStyle1)); // fontSize
+// console.log(transformCssStyle(cssStyle2)); // backgroundColor
+// console.log(transformCssStyle(cssStyle3)); // textAlign
